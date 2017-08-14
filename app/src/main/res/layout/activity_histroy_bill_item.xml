@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/histroy_bill_item_relative"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:attr/selectableItemBackground">
+
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/histroy_bill_item_text_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/common_measure_15dp"
+            android:layout_marginLeft="@dimen/common_measure_10dp"
+            android:layout_marginRight="@dimen/common_measure_100dp"
+            android:textColor="@color/black"
+            android:maxLines="2"
+            android:textSize="@dimen/text_size_17" />
+
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/histroy_bill_item_text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/histroy_bill_item_text_code"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/common_measure_10dp"
+            android:layout_marginLeft="@dimen/common_measure_10dp"
+            android:textColor="@color/colorgray"
+            android:textSize="@dimen/text_size_17" />
+
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/histroy_bill_item_text_money"
+            android:layout_alignBaseline="@id/histroy_bill_item_text_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/common_measure_10dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/colormain"
+            android:textSize="@dimen/text_size_17" />
+    </RelativeLayout>
+</FrameLayout>

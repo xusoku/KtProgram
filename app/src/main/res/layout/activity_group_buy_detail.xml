@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.davis.sdj.views.TBLayout
+            android:id="@+id/product_detail_drag"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+
+            <com.davis.sdj.views.MyScrollViewSmooh
+                android:id="@id/header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+
+                    <com.davis.sdj.views.loopbanner.LoopBanner
+                        android:id="@+id/product_detail_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:id="@+id/product_detail_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:layout_marginTop="@dimen/common_measure_10dp"
+                        android:text="sdfasdf"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_20" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:id="@+id/detail_groupbuy_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/common_measure_10dp"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            android:layout_marginTop="@dimen/common_measure_20dp"
+                            android:text="¥14.9"
+                            android:textColor="@color/colorgray"
+                            android:textSize="@dimen/text_size_17" />
+
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:id="@+id/groupbuy_marker_price"
+                            android:layout_toRightOf="@id/detail_groupbuy_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/common_measure_10dp"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            android:layout_marginTop="@dimen/common_measure_20dp"
+                            android:text="¥14.9"
+                            android:layout_alignBaseline="@id/detail_groupbuy_price"
+                            android:textColor="@color/colorgray"
+                            android:textSize="@dimen/text_size_17" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:id="@+id/detail_groupbuy_open_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/common_measure_10dp"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            android:layout_marginTop="@dimen/common_measure_20dp"
+                            android:text="所需成团人数:"
+                            android:textColor="@color/colorgray"
+                            android:textSize="@dimen/text_size_17" />
+
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:id="@+id/detail_groupbuy_open_number_text"
+                            android:layout_toRightOf="@id/detail_groupbuy_open_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/common_measure_5dp"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            android:layout_marginTop="@dimen/common_measure_20dp"
+                            android:text="5人"
+                            android:textColor="@color/colorgray"
+                            android:textSize="@dimen/text_size_17" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:id="@+id/detail_groupbuy_countdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/common_measure_10dp"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            android:layout_marginTop="@dimen/common_measure_20dp"
+                            android:text="距离结束实际:"
+                            android:textColor="@color/colorgray"
+                            android:textSize="@dimen/text_size_17" />
+
+                        <cn.iwgang.countdownview.CountdownView
+                            android:id="@+id/detail_groupbuy_count_time"
+                            android:layout_toRightOf="@id/detail_groupbuy_countdown"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="@dimen/common_measure_10dp"
+                            app:isHideTimeBackground="false"
+                            app:isShowDay="false"
+                            app:isShowHour="true"
+                            app:isShowMinute="true"
+                            app:isShowSecond="true"
+                            app:isShowMillisecond="false"
+                            app:suffixGravity="center"
+                            app:suffixTextColor="#000000"
+                            app:suffixTextSize="@dimen/text_size_15"
+                            app:timeBgDivisionLineSize="1dp"
+                            app:timeBgRadius="3dp"
+                            app:timeBgSize="@dimen/common_measure_30dp"
+                            app:timeTextColor="#ffffff"
+                            app:timeTextSize="@dimen/text_size_15" />
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/detail_groupbuy_relative"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:id="@+id/detail_groupbuy_use_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:textSize="@dimen/text_size_17"
+                        android:textColor="@color/colorgray"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:text="sdfsdf"
+                        android:layout_marginRight="@dimen/common_measure_10dp"/>
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:id="@+id/detail_groupbuy_use_count_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:textColor="@color/colormain"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:textSize="@dimen/text_size_17"
+                        android:visibility="gone"
+                        android:text="已成团"/>
+                    </RelativeLayout>
+
+                    <com.davis.sdj.views.StretchedListView
+                        android:id="@+id/detail_groupbuy_use_lst"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:layout_marginLeft="@dimen/common_measure_5dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></com.davis.sdj.views.StretchedListView>
+
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:id="@+id/detail_groupbuy_used_text"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:textColor="@color/colormain"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:textSize="@dimen/text_size_17"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:text="该商品已成团，可立即支付"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/common_measure_10dp"
+                        android:layout_marginTop="@dimen/common_measure_10dp"
+                        android:background="@color/colorlightgray"/>
+
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:text="团购小贴士"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_20" />
+
+                    <com.davis.sdj.views.CustomTypefaceTextView
+                        android:id="@+id/detail_groupbuy_description"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/common_measure_10dp"
+                        android:layout_marginRight="@dimen/common_measure_10dp"
+                        android:layout_marginTop="@dimen/common_measure_20dp"
+                        android:textColor="@color/colorgray"
+                        android:textSize="@dimen/text_size_17" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/common_measure_70dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <com.davis.sdj.views.CustomTypefaceTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@mipmap/triangle_down"
+                            android:gravity="center"
+                            android:textColor="@color/colorgray"
+                            android:text="继续拖动,查看图文详情"
+                            android:textSize="@dimen/text_size_15" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.davis.sdj.views.MyScrollViewSmooh>
+
+            <ScrollView
+                android:id="@id/footer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <com.davis.sdj.views.XWebView
+                        android:id="@+id/product_detail_xweb"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </ScrollView>
+        </com.davis.sdj.views.TBLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_measure_70dp"
+            android:background="@color/colorgray"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/detail_add_groupbuy_linear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="?android:attr/selectableItemBackground"
+                android:onClick="doClick">
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/detail_add_groupbuy_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange"
+                    android:gravity="center"
+                    android:text="立即参团"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_22" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

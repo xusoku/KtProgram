@@ -15,13 +15,13 @@ import android.view.View;
 import android.widget.RemoteViews;
 import android.widget.Toast;
 
-import com.davis.sdj.AppApplication;
-import com.davis.sdj.MainActivity;
-import com.davis.sdj.R;
-import com.davis.sdj.api.ApiCallback;
-import com.davis.sdj.api.ApiInstant;
-import com.davis.sdj.model.basemodel.BaseModel;
-import com.davis.sdj.views.CustomAlterDialog;
+import com.davis.ktprogram.AppApplication;
+import com.davis.ktprogram.MainActivity;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.api.ApiCallback;
+import com.davis.ktprogram.api.ApiInstant;
+import com.davis.ktprogram.model.BaseModel;
+import com.davis.ktprogram.views.CustomAlterDialog;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -39,7 +39,7 @@ public class DownLoadSoftUpdate {
     /**
      * 软件更新
      */
-    public final static File APP_ROOT_DIR_FILE = new File(AppApplication.getApplication().getFilesDir(), "KPH");
+    public final static File APP_ROOT_DIR_FILE = new File(AppApplication.Companion.getApplication().getFilesDir(), "KPH");
 //    public final static File APP_ROOT_DIR_FILE = new File(Environment.getExternalStorageDirectory(), "KPH");
 
     private Context mContext;
@@ -384,12 +384,12 @@ public class DownLoadSoftUpdate {
     public void checkUpdate(boolean flag) {
         // 检测是否需要软件升级
 
-        Call<BaseModel<VersionInfo>> call = ApiInstant.getInstant().update(AppApplication.apptype);
+        Call<BaseModel<VersionInfo>> call = ApiInstant.INSTANCE.getInstant().update(AppApplication.Companion.getApptype());
         call.enqueue(new ApiCallback<BaseModel<VersionInfo>>() {
             @Override
             public void onSucssce(BaseModel<VersionInfo> versionInfoBaseModel) {
 
-                VersionInfo info = versionInfoBaseModel.object;
+                VersionInfo info = versionInfoBaseModel.getObject();
                 if (info != null) {
                     versionInfos = new VersionInfo();
                     versionInfos.downurl = info.downurl;

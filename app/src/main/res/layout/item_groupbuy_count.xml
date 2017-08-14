@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.davis.sdj.views.CustomTypefaceTextView
+        android:id="@+id/item_detail_groupbuy_phone"
+        android:layout_toRightOf="@id/detail_groupbuy_open_number"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_measure_5dp"
+        android:layout_marginRight="@dimen/common_measure_10dp"
+        android:layout_marginTop="@dimen/common_measure_20dp"
+        android:text="124563456534"
+        android:textColor="@color/colorgray"
+        android:textSize="@dimen/text_size_17" />
+    <com.davis.sdj.views.CustomTypefaceTextView
+        android:id="@+id/item_detail_groupbuy_date"
+        android:layout_toRightOf="@id/detail_groupbuy_open_number"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_measure_5dp"
+        android:layout_marginRight="@dimen/common_measure_10dp"
+        android:layout_marginTop="@dimen/common_measure_20dp"
+        android:gravity="center"
+        android:text="5人"
+        android:textColor="@color/colorgray"
+        android:textSize="@dimen/text_size_17" />
+    <com.davis.sdj.views.CustomTypefaceTextView
+        android:id="@+id/item_detail_groupbuy_time"
+        android:layout_toRightOf="@id/detail_groupbuy_open_number"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/common_measure_5dp"
+        android:layout_marginRight="@dimen/common_measure_10dp"
+        android:layout_marginTop="@dimen/common_measure_20dp"
+        android:text="5人"
+        android:gravity="right"
+        android:textColor="@color/colorgray"
+        android:textSize="@dimen/text_size_17" />
+</LinearLayout>

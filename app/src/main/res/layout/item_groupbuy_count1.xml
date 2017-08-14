@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/item_detail_groupbuy_image"
+        android:layout_width="@dimen/common_measure_60dp"
+        android:layout_height="@dimen/common_measure_60dp"
+        android:src="@mipmap/add_groupbuy_photo"
+        android:layout_centerVertical="true"
+        android:layout_margin="@dimen/common_measure_10dp"
+        android:scaleType="fitCenter"
+        app:riv_corner_radius="30dip"
+        app:riv_border_width="2dip"
+        app:riv_border_color="#333333"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="clamp"
+        app:riv_oval="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_toRightOf="@id/item_detail_groupbuy_image"
+        android:layout_centerVertical="true">
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/item_detail_groupbuy_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="124563456534"
+            android:textColor="@color/colortext"
+            android:textSize="@dimen/text_size_20" />
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/item_detail_groupbuy_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_measure_5dp"
+            android:gravity="center"
+            android:text="5人"
+            android:textColor="@color/colorgray"
+            android:textSize="@dimen/text_size_17" />
+    </LinearLayout>
+
+    <com.davis.sdj.views.CustomTypefaceTextView
+        android:id="@+id/item_detail_groupbuy_btn"
+        android:layout_toRightOf="@id/detail_groupbuy_open_number"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="去参团"
+        android:layout_margin="@dimen/common_measure_10dp"
+        android:background="@drawable/bg_uncri_red"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_size_20" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorgray1"
+        android:layout_marginRight="@dimen/common_measure_10dp"
+        android:layout_marginLeft="@dimen/common_measure_10dp"/>
+</RelativeLayout>

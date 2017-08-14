@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_measure_20dp"
+        android:background="@color/white">
+
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/my_address_add_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_measure_64dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="doClick"
+            android:text="＋添加新的收获地址"
+            android:textColor="@color/colormain"
+            android:textSize="@dimen/text_size_22" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_measure_5dp"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/select_address_add_text_relative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.davis.sdj.views.CustomTypefaceTextView
+                android:id="@+id/select_address_add_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_measure_54dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="doClick"
+                android:paddingBottom="@dimen/common_measure_10dp"
+                android:paddingLeft="@dimen/common_measure_15dp"
+                android:paddingRight="@dimen/common_measure_15dp"
+                android:paddingTop="@dimen/common_measure_10dp"
+                android:text="选择自提收货地址"
+                android:textColor="@color/colormain"
+                android:textSize="@dimen/text_size_17" />
+            <ImageView
+                android:id="@+id/order_address_right"
+                android:layout_width="@dimen/common_measure_20dp"
+                android:layout_height="@dimen/common_measure_20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="@dimen/common_measure_10dp"
+                android:gravity="center"
+                android:src="@mipmap/ic_right_arrow" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <com.davis.sdj.views.CustomTypefaceTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_measure_15dp"
+        android:text="我的地址"
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_size_17" />
+
+    <ListView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:dividerHeight="4dp"
+        android:scrollbars="none" />
+</LinearLayout>

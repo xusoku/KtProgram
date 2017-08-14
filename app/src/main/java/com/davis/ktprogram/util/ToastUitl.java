@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-import com.davis.sdj.AppApplication;
+import com.davis.ktprogram.AppApplication;
 
 /**
  * Created by davis on 16/5/18.
@@ -17,7 +17,7 @@ public class ToastUitl {
     private static Toast mToast = null;
 
     static {
-        mContext = AppApplication.getApplication();
+        mContext = AppApplication.Companion.getApplication();
     }
 
     /**

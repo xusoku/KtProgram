@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/common_measure_5dp"
+    app:cardCornerRadius="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_measure_5dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/groupbuy_image"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_measure_10dp">
+
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/common_measure_10dp"
+                    android:layout_marginTop="@dimen/common_measure_10dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="aaasdfsdfsdfsdfsdfsadfasdfsafasdfasfa"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_20" />
+
+                <com.davis.sdj.views.ProgressBarWithText
+                    android:id="@+id/progressbar"
+                    style="@style/ProgressBar_Mini"
+                    android:layout_width="@dimen/common_measure_200dp"
+                    android:layout_height="@dimen/common_measure_20dp"
+                    android:layout_below="@+id/groupbuy_title"
+                    android:layout_marginRight="@dimen/common_measure_30dp"
+                    android:layout_marginTop="@dimen/common_measure_10dp" />
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/progressbar"
+                    android:layout_marginTop="@dimen/common_measure_10dp"
+                    android:text="$23.8"
+                    android:textColor="@color/colorgray"
+                    android:textSize="@dimen/text_size_17" />
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_oldprice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@id/groupbuy_price"
+                    android:layout_below="@id/progressbar"
+                    android:layout_marginLeft="@dimen/common_measure_20dp"
+                    android:layout_toRightOf="@id/groupbuy_price"
+                    android:gravity="bottom"
+                    android:text="¥ 23"
+                    android:textColor="@color/colorgray"
+                    android:textSize="@dimen/text_size_17" />
+
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/common_measure_40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/groupbuy_price"
+                    android:background="@drawable/bg_cri_red"
+                    android:gravity="center"
+                    android:text="邀请好友"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_20" />
+
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_pe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@id/groupbuy_btn"
+                    android:layout_alignParentRight="true"
+                    android:padding="2dp"
+                    android:text="还差2人"
+                    android:textColor="@color/colorgray"
+                    android:textSize="@dimen/text_size_15" />
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:id="@+id/groupbuy_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/groupbuy_price"
+                    android:layout_marginTop="@dimen/common_measure_10dp"
+                    android:text="剩余时间:"
+                    android:textColor="@color/colormain"
+                    android:textSize="@dimen/text_size_17"
+                    android:visibility="gone" />
+
+                <cn.iwgang.countdownview.CountdownView
+                    android:id="@+id/groupbuy_count_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/groupbuy_price"
+                    android:layout_marginRight="@dimen/common_measure_10dp"
+                    android:layout_marginTop="@dimen/common_measure_10dp"
+                    android:layout_toRightOf="@id/groupbuy_time"
+                    app:isHideTimeBackground="false"
+                    app:isShowDay="false"
+                    app:isShowHour="true"
+                    app:isShowMillisecond="false"
+                    app:isShowMinute="true"
+                    app:isShowSecond="true"
+                    app:suffixGravity="center"
+                    app:suffixTextColor="#000000"
+                    app:suffixTextSize="@dimen/text_size_15"
+                    app:timeBgDivisionLineSize="1dp"
+                    app:timeBgRadius="3dp"
+                    app:timeBgSize="@dimen/common_measure_30dp"
+                    app:timeTextColor="#FFFFFF"
+                    app:timeTextSize="@dimen/text_size_15" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="@dimen/common_measure_5dp"
+            android:background="@color/colorgray1" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/groupbuy_order_detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/common_measure_10dp"
+                android:background="?android:attr/selectableItemBackground">
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:text="查看订单详情"
+                    android:textColor="@color/colorgray"
+                    android:textSize="@dimen/text_size_20"  />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/groupbuy_detail_text"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@id/groupbuy_order_detail_text"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_marginRight="@dimen/common_measure_10dp"
+                android:layout_marginTop="@dimen/common_measure_10dp">
+
+                <com.davis.sdj.views.CustomTypefaceTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edittext"
+                    android:text="查看拼单详情"
+                    android:textColor="@color/colorgray"
+                    android:textSize="@dimen/text_size_20" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

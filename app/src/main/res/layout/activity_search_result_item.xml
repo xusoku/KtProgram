@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/common_measure_5dp"
+    app:cardCornerRadius="3dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/common_measure_5dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/search_result_item_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="fitXY" />
+            </LinearLayout>
+
+            <com.davis.sdj.views.CustomTypefaceTextView
+                android:id="@+id/search_result_item_name_tv"
+                android:layout_width="@dimen/common_measure_58dp"
+                android:layout_height="@dimen/common_measure_45dp"
+                android:background="@mipmap/mark_bg"
+                android:padding="@dimen/common_measure_10dp"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="@dimen/text_size_17" />
+        </RelativeLayout>
+
+        <com.davis.sdj.views.CustomTypefaceTextView
+            android:id="@+id/search_result_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_measure_61dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:padding="@dimen/common_measure_10dp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_17" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.davis.sdj.views.CustomTypefaceTextView
+                android:id="@+id/search_result_item_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_measure_10dp"
+                android:layout_weight="1"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="@color/colorgray"
+                android:textSize="@dimen/text_size_15" />
+
+            <LinearLayout
+                android:id="@+id/search_cart_iv"
+                android:layout_width="@dimen/common_measure_40dp"
+                android:layout_height="@dimen/common_measure_40dp"
+                android:layout_alignParentRight="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="doClick"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/common_measure_28dp"
+                    android:layout_height="@dimen/common_measure_28dp"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/mine_cart" />
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/search_result_item_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:gravity="center_vertical"
+            android:visibility="gone"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/add_cart_add_mins"
+                android:layout_width="@dimen/common_measure_40dp"
+                android:layout_height="@dimen/common_measure_40dp"
+                android:layout_toLeftOf="@id/add_cart_add_center"
+                android:background="@drawable/bg_flow_tag_unselect"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_measure_20dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/add_cart_add_center"
+                android:layout_width="@dimen/common_measure_40dp"
+                android:layout_height="@dimen/common_measure_40dp"
+                android:layout_toLeftOf="@id/add_cart_add"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_17" />
+
+            <TextView
+                android:id="@+id/add_cart_add"
+                android:layout_width="@dimen/common_measure_40dp"
+                android:layout_height="@dimen/common_measure_40dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/bg_flow_tag_unselect"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="@color/black"
+                android:textSize="@dimen/common_measure_20dp"
+                android:textStyle="bold" />
+
+            <com.davis.sdj.views.CustomTypefaceTextView
+                android:id="@+id/search_result_item_jifen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:padding="@dimen/common_measure_10dp"
+                android:textColor="@color/red"
+                android:text="兑换"
+                android:gravity="right"
+                android:textSize="@dimen/text_size_17" />
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

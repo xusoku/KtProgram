@@ -14,21 +14,12 @@ import android.text.style.StrikethroughSpan;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.davis.sdj.AppApplication;
-import com.davis.sdj.R;
-import com.davis.sdj.activity.AboutActivity;
-import com.davis.sdj.activity.GroupBuyDetailActivity;
-import com.davis.sdj.activity.GroupBuyListActivity;
-import com.davis.sdj.activity.PreSaleDetailActivity;
-import com.davis.sdj.activity.ProductDetailActivity;
-import com.davis.sdj.activity.RechargeActivity;
-import com.davis.sdj.activity.SearchResultActivity;
-import com.davis.sdj.adapter.CountDownAdapter;
-import com.davis.sdj.api.ApiService;
-import com.davis.sdj.model.Banner;
-import com.davis.sdj.model.GroupBuy;
-import com.davis.sdj.model.Product;
-import com.davis.sdj.model.ProductDetail;
+import com.davis.ktprogram.AppApplication;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.model.Banner;
+import com.davis.ktprogram.model.GroupBuy;
+import com.davis.ktprogram.model.Product;
+import com.davis.ktprogram.model.ProductDetail;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -72,7 +63,7 @@ public class ViewInitHelper {
 
     public static SpannableString getTicketNum(String strLong, String strShort) {
         SpannableString spanString = new SpannableString(strLong);
-        ForegroundColorSpan span = new ForegroundColorSpan(AppApplication
+        ForegroundColorSpan span = new ForegroundColorSpan(AppApplication.Companion
                 .getApplication().getResources().getColor(R.color.white));
         spanString.setSpan(span, 1, strShort.length() + 1,
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -192,7 +183,7 @@ public class ViewInitHelper {
                 (int) (size2 * DisplayMetricsUtils.getDensity()));
         spanString.setSpan(spanSzieMiddle, 1, spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        ForegroundColorSpan span = new ForegroundColorSpan(AppApplication
+        ForegroundColorSpan span = new ForegroundColorSpan(AppApplication.Companion
                 .getApplication().getResources().getColor(R.color.colormain));
         spanString.setSpan(span, 0, spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -202,7 +193,7 @@ public class ViewInitHelper {
     public static SpannableString getCurrentPriceInDiscount(String str, int size1, int size2) {
         SpannableString spanString = new SpannableString(str);
         ForegroundColorSpan span = new ForegroundColorSpan(AppApplication
-                .getApplication().getResources().getColor(R.color.colormain));
+                .Companion.getApplication().getResources().getColor(R.color.colormain));
         spanString.setSpan(span, 0, spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         AbsoluteSizeSpan spanSzieLeft = new AbsoluteSizeSpan(
@@ -219,7 +210,7 @@ public class ViewInitHelper {
     public static SpannableString getPriceInCinemaList(String str) {
         SpannableString spanString = new SpannableString(str);
         ForegroundColorSpan span = new ForegroundColorSpan(AppApplication
-                .getApplication().getResources().getColor(R.color.colormain));
+                .Companion.getApplication().getResources().getColor(R.color.colormain));
         spanString.setSpan(span, 4, spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return spanString;
@@ -308,7 +299,7 @@ public class ViewInitHelper {
         spanString.setSpan(spanSzieLeft, movieName.length(), spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         ForegroundColorSpan span = new ForegroundColorSpan(AppApplication
-                .getApplication().getResources().getColor(R.color.colorgray));
+                .Companion.getApplication().getResources().getColor(R.color.colorgray));
         spanString.setSpan(span, movieName.length(), spanString.length(),
                 Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
         return spanString;
@@ -534,72 +525,72 @@ public class ViewInitHelper {
         return str;
     }
 
-    public static Product productDetailToProduct(GroupBuy groupBuy) {
-        ProductDetail productDetail=groupBuy.product;
-        Product product=new Product();
-        product.iproductid=productDetail.iproductid;
-        product.productname=productDetail.sphysicname;
-        product.fmarkerprice=productDetail.fmarkerprice;
-        product.fvipprice=productDetail.fvipprice;
-        product.fprice=groupBuy.ptprice;
-        product.sstandard=productDetail.sstandard;
-        product.picurl= ApiService.picurl+productDetail.spicurl;
-        product.count="1";
-        product.srequire=productDetail.srequire;
-        product.mincount=productDetail.mincount;
-        product.prostate=productDetail.prostate;
-        return product;
-    }
-
-    public static void clickBanner(Context context, Banner item) {
-
-//        tuangou  团购列表
-//        tuangouDetail 团购详情
-//        presellList 预售列表
-//        presellDetail 预售详情
-//        link 直接嵌入link地址‘
-        Banner itemData = item;
-        if (itemData == null) {
-            return;
-        }
-        String gotype = itemData.gotype;
-        if (TextUtils.isEmpty(gotype)) {
-            gotype = "";
-        }
-        String tempvalue = itemData.tempvalue;
-        if (TextUtils.isEmpty(tempvalue)) {
-            tempvalue = "";
-        }
-        if (gotype.equals("detail")) {
-            ProductDetailActivity.jumpProductDetailActivity(context, tempvalue);
-        } else if (gotype.equals("rootlist")) {
-            SearchResultActivity.jumpSearchResultActivity(context, "", false, "", tempvalue);
-        } else if (gotype.equals("list")) {
-            SearchResultActivity.jumpSearchResultActivity(context, "", false, tempvalue, "");
-        } else if (gotype.equals("special")) {
-            SearchResultActivity.jumpSearchResultActivity(context, itemData.title, true, tempvalue);
-        } else if (gotype.equals("search")) {
-            SearchResultActivity.jumpSearchResultActivity(context, tempvalue, true);
-        } else if (gotype.equals("productlist")) {
-            SearchResultActivity.jumpSearchResultActivity(context, itemData.title, false, true, "", tempvalue);
-        } else if (gotype.equals("tuan")) {
-            SearchResultActivity.jumpSearchResultActivity(context, "吃货团购", true, "index_tuan");
-        } else if (gotype.equals("jifen")) {
-            SearchResultActivity.jumpSearchResultActivity(context, "积分兑换", true, "jifen");
-        } else if (gotype.equals("credit")) {
-            RechargeActivity.jumpRechangeActivity(context);
-        } else if (gotype.equals("tuangou")) {
-            GroupBuyListActivity.jumpGroupBuyActivity(context, CountDownAdapter.GROUPBUY);
-        } else if (gotype.equals("tuangouDetail")) {
-            GroupBuyDetailActivity.jumpGroupBuyDetailActivity(context, tempvalue + "", GroupBuyDetailActivity.OPEN_GROUPBUY);
-        } else if (gotype.equals("presellList")) {
-            GroupBuyListActivity.jumpGroupBuyActivity(context, CountDownAdapter.PRESALE);
-        } else if (gotype.equals("presellDetail")) {
-            PreSaleDetailActivity.jumpPreSaleDetailActivity(context, tempvalue);
-        }else if(gotype.equals("link")){
-            AboutActivity.jumpAboutActivity(context,tempvalue,itemData.title);
-        }
-    }
+//    public static Product productDetailToProduct(GroupBuy groupBuy) {
+//        ProductDetail productDetail=groupBuy.getProduct();
+//        Product product=new Product();
+//        product.setIproductid(productDetail.getIproductid());
+//        product.productname=productDetail.sphysicname;
+//        product.fmarkerprice=productDetail.fmarkerprice;
+//        product.fvipprice=productDetail.fvipprice;
+//        product.fprice=groupBuy.ptprice;
+//        product.sstandard=productDetail.sstandard;
+//        product.picurl= ApiService.picurl+productDetail.spicurl;
+//        product.count="1";
+//        product.srequire=productDetail.srequire;
+//        product.mincount=productDetail.mincount;
+//        product.prostate=productDetail.prostate;
+//        return product;
+//    }
+//
+//    public static void clickBanner(Context context, Banner item) {
+//
+////        tuangou  团购列表
+////        tuangouDetail 团购详情
+////        presellList 预售列表
+////        presellDetail 预售详情
+////        link 直接嵌入link地址‘
+//        Banner itemData = item;
+//        if (itemData == null) {
+//            return;
+//        }
+//        String gotype = itemData.gotype;
+//        if (TextUtils.isEmpty(gotype)) {
+//            gotype = "";
+//        }
+//        String tempvalue = itemData.tempvalue;
+//        if (TextUtils.isEmpty(tempvalue)) {
+//            tempvalue = "";
+//        }
+//        if (gotype.equals("detail")) {
+//            ProductDetailActivity.jumpProductDetailActivity(context, tempvalue);
+//        } else if (gotype.equals("rootlist")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, "", false, "", tempvalue);
+//        } else if (gotype.equals("list")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, "", false, tempvalue, "");
+//        } else if (gotype.equals("special")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, itemData.title, true, tempvalue);
+//        } else if (gotype.equals("search")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, tempvalue, true);
+//        } else if (gotype.equals("productlist")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, itemData.title, false, true, "", tempvalue);
+//        } else if (gotype.equals("tuan")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, "吃货团购", true, "index_tuan");
+//        } else if (gotype.equals("jifen")) {
+//            SearchResultActivity.jumpSearchResultActivity(context, "积分兑换", true, "jifen");
+//        } else if (gotype.equals("credit")) {
+//            RechargeActivity.jumpRechangeActivity(context);
+//        } else if (gotype.equals("tuangou")) {
+//            GroupBuyListActivity.jumpGroupBuyActivity(context, CountDownAdapter.GROUPBUY);
+//        } else if (gotype.equals("tuangouDetail")) {
+//            GroupBuyDetailActivity.jumpGroupBuyDetailActivity(context, tempvalue + "", GroupBuyDetailActivity.OPEN_GROUPBUY);
+//        } else if (gotype.equals("presellList")) {
+//            GroupBuyListActivity.jumpGroupBuyActivity(context, CountDownAdapter.PRESALE);
+//        } else if (gotype.equals("presellDetail")) {
+//            PreSaleDetailActivity.jumpPreSaleDetailActivity(context, tempvalue);
+//        }else if(gotype.equals("link")){
+//            AboutActivity.jumpAboutActivity(context,tempvalue,itemData.title);
+//        }
+//    }
 
 
 }

@@ -22,14 +22,14 @@ class AppApplication : Application() {
             return instance
         }
 
-        var apptype = "android"
+        val apptype = "android"
         var shopid = ""
         var token = ""
         var userInfo: UserInfo? = null
         var extendedinfo: Extendedinfo? = null
         var address: Address? = null
 
-        var kefu = "4009216797"
+        val kefu = "4009216797"
 
         var shoplist: ArrayList<Shop> = ArrayList()
 

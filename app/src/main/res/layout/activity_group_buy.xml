@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_group_buy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.davis.sdj.views.MySwipeRefreshLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.davis.sdj.views.LoadMoreListView
+            android:id="@+id/groupbuy_lst"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/common_measure_5dp"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="vertical">
+
+        </com.davis.sdj.views.LoadMoreListView>
+    </com.davis.sdj.views.MySwipeRefreshLayout>
+
+</RelativeLayout>

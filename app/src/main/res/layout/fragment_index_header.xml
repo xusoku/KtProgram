@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.davis.sdj.views.viewlineloop.LoopBanner
+        android:id="@+id/index_loopbanner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_measure_235dp">
+
+    </com.davis.sdj.views.viewlineloop.LoopBanner>
+
+    <com.davis.sdj.views.NoScrollGridView
+        android:id="@+id/index_ad_noScrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="4">
+    </com.davis.sdj.views.NoScrollGridView>
+
+    <com.davis.sdj.views.StretchedListView
+        android:id="@+id/index_AD_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:background="@color/white"
+        />
+    <com.davis.sdj.views.StretchedListView
+        android:id="@+id/recomment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:background="@color/white"
+        />
+
+</LinearLayout>

@@ -14,10 +14,11 @@ import android.text.style.StyleSpan;
 import android.text.style.URLSpan;
 import android.text.style.UnderlineSpan;
 
-import com.davis.sdj.AppApplication;
-import com.davis.sdj.R;
+import com.davis.ktprogram.AppApplication;
+import com.davis.ktprogram.R;
 
 import java.text.DecimalFormat;
+
 
 /**
  * Created by davis on 16/5/23.
@@ -220,7 +221,7 @@ public class UtilText {
      */
     private void addImageSpan() {
         SpannableString spanString = new SpannableString(" ");
-        Drawable d = AppApplication.getApplication().getResources().getDrawable(R.mipmap.img_defualt_bg);
+        Drawable d = AppApplication.Companion.getApplication().getResources().getDrawable(R.mipmap.img_defualt_bg);
         d.setBounds(0, 0, d.getIntrinsicWidth(), d.getIntrinsicHeight());
         ImageSpan span = new ImageSpan(d, ImageSpan.ALIGN_BASELINE);
         spanString.setSpan(span, 0, 1, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
