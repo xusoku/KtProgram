@@ -7,6 +7,7 @@ import com.davis.ktprogram.api.ApiService
 import com.davis.ktprogram.base.BaseActivity
 import com.davis.ktprogram.model.BaseModel
 import com.davis.ktprogram.model.Shop
+import com.davis.ktprogram.util.LogUtils
 import com.davis.ktprogram.util.ToastUitl
 import java.util.ArrayList
 
@@ -22,6 +23,8 @@ class MainActivity : BaseActivity() {
         call.enqueue(object : ApiCallback<BaseModel<ArrayList<Shop>>>() {
             override fun onSucssce(baseModel: BaseModel<ArrayList<Shop>>) {
 
+                val listShop=baseModel.`object`;
+                LogUtils.e("asdf",listShop.toString())
             }
 
             override fun onFailure() {

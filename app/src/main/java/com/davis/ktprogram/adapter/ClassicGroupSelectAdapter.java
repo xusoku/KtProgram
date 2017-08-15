@@ -13,11 +13,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.davis.sdj.R;
-import com.davis.sdj.activity.SearchResultActivity;
-import com.davis.sdj.model.Category;
-import com.davis.sdj.views.NoScrollGridView;
-import com.davis.sdj.views.PinnedHeaderListView;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.model.Category;
+import com.davis.ktprogram.views.NoScrollGridView;
+import com.davis.ktprogram.views.PinnedHeaderListView;
 
 import java.util.List;
 
@@ -51,9 +50,9 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
         }
         // 获取数据
         Category itemEntity = (Category) getItem(position);
-        if(itemEntity.clist.size()>0){
-            if(itemEntity.clist.get(0).id.equals("0")){
-                itemEntity.clist.remove(0);
+        if(itemEntity.getClist().size()>0){
+            if(itemEntity.getClist().get(0).getId().equals("0")){
+                itemEntity.getClist().remove(0);
             }
         }
         GridViewAdapter gridViewAdapter = new GridViewAdapter(itemEntity);
@@ -62,7 +61,7 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
 
         if (needTitle(position)) {
             // 显示标题并设置内容 
-            viewHolder.title.setText(itemEntity.name);
+            viewHolder.title.setText(itemEntity.getName());
             viewHolder.title.setVisibility(View.VISIBLE);
         } else {
             // 内容项隐藏标题
@@ -118,7 +117,7 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
     public void configurePinnedHeader(View headerView, int position, int alpaha) {
         // 设置标题的内容
         Category itemEntity = (Category) getItem(position);
-        String headerValue = itemEntity.name;
+        String headerValue = itemEntity.getName();
 
         if (!TextUtils.isEmpty(headerValue)) {
             TextView headerTextView = (TextView) headerView.findViewById(R.id.classic_rootid_list_item);
@@ -151,8 +150,8 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
             return false;
         }
 
-        String currentTitle = currentEntity.name;
-        String previousTitle = previousEntity.name;
+        String currentTitle = currentEntity.getName();
+        String previousTitle = previousEntity.getName();
         if (null == previousTitle || null == currentTitle) {
             return false;
         }
@@ -175,8 +174,8 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
         }
 
         // 获取两项header内容
-        String currentTitle = currentEntity.name;
-        String nextTitle = nextEntity.name;
+        String currentTitle = currentEntity.getName();
+        String nextTitle = nextEntity.getName();
         if (null == currentTitle || null == nextTitle) {
             return false;
         }
@@ -201,7 +200,7 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
 
         public GridViewAdapter(Category category) {
             this.tcategory=category;
-            this.categories = category.clist;
+            this.categories = category.getClist();
         }
 
         @Override
@@ -236,8 +235,8 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
 
             final Category category = categories.get(position);
 
-            viewHolder.textView.setText(category.name);
-            Glide.with(mContext).load(category.picurl)
+            viewHolder.textView.setText(category.getName());
+            Glide.with(mContext).load(category.getPicurl())
                     .placeholder(R.mipmap.img_defualt_bg)
                     .error(R.mipmap.img_defualt_bg)
                     .into(viewHolder.imageView);
@@ -245,7 +244,7 @@ public class ClassicGroupSelectAdapter extends BaseAdapter
            viewHolder.classic_rootid_right_nogrid_linear.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    SearchResultActivity.jumpSearchResultActivity(mContext,"",false,category.id,tcategory.id);
+//                    SearchResultActivity.jumpSearchResultActivity(mContext,"",false,category.id,tcategory.id);
                 }
             });
 

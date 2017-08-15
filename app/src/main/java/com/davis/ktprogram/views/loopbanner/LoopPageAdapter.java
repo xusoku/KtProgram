@@ -6,8 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.davis.sdj.adapter.base.ViewHolder;
-import com.davis.sdj.adapter.recycleradapter.RecyclingPagerAdapter;
+
+import com.davis.ktprogram.adapter.base.ViewHolder;
+import com.davis.ktprogram.adapter.recycleradapter.RecyclingPagerAdapter;
 
 import java.util.List;
 

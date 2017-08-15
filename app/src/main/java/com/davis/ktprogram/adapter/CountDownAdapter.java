@@ -8,12 +8,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.davis.sdj.R;
-import com.davis.sdj.adapter.base.CommonBaseAdapter;
-import com.davis.sdj.adapter.base.ViewHolder;
-import com.davis.sdj.model.GroupBuy;
-import com.davis.sdj.util.DisplayMetricsUtils;
-import com.davis.sdj.util.UtilText;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.adapter.base.CommonBaseAdapter;
+import com.davis.ktprogram.adapter.base.ViewHolder;
+import com.davis.ktprogram.model.GroupBuy;
+import com.davis.ktprogram.util.DisplayMetricsUtils;
+import com.davis.ktprogram.util.UtilText;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class CountDownAdapter extends CommonBaseAdapter<GroupBuy> {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams((int) DisplayMetricsUtils.getWidth(), (int) (DisplayMetricsUtils.getWidth() * 0.464));
         iv.setLayoutParams(layoutParams);
 
-        Glide.with(mContext).load(itemData.picurl)
+        Glide.with(mContext).load(itemData.getPicurl())
                 .placeholder(R.mipmap.img_defualt_bg)
                 .error(R.mipmap.img_defualt_bg)
                 .into(iv);
@@ -66,24 +66,24 @@ public class CountDownAdapter extends CommonBaseAdapter<GroupBuy> {
         tv_price.setText("");
         tv_price.append(UtilText.getIndexPrice("¥"));
         if(type==GROUPBUY) {
-            tv_price.append(UtilText.getBigProductDetail(itemData.ptprice, 50));
+            tv_price.append(UtilText.getBigProductDetail(itemData.getPtprice(), 50));
         }else{
-            tv_price.append(UtilText.getBigProductDetail(itemData.price, 50));
+            tv_price.append(UtilText.getBigProductDetail(itemData.getPrice(), 50));
         }
 
 
 
         if(type==GROUPBUY){
-            tv_name.setText(itemData.pttitle);
+            tv_name.setText(itemData.getPttitle());
 
             groupbuy_oldprice.getPaint().setFlags(Paint. STRIKE_THRU_TEXT_FLAG);
             groupbuy_time.setVisibility(View.GONE);
             groupbuy_count_time.setVisibility(View.GONE);
             groupbuy_pe.setVisibility(View.VISIBLE);
-            groupbuy_oldprice.setText("¥"+itemData.marketprice);
-            groupbuy_pe.setText("已有"+itemData.salecount+"人团");
+            groupbuy_oldprice.setText("¥"+itemData.getMarketprice());
+            groupbuy_pe.setText("已有"+itemData.getSalecount()+"人团");
 
-            if(itemData.ptstatus.equals("1")){
+            if(itemData.getPtstatus().equals("1")){
                 groupbuy_btn.setBackgroundResource(R.drawable.bg_cri_red);
                 groupbuy_btn.setText("马上抢");
             }else{
@@ -91,16 +91,16 @@ public class CountDownAdapter extends CommonBaseAdapter<GroupBuy> {
                 groupbuy_btn.setText("团购结束");
             }
         }else{
-            tv_name.setText(itemData.title);
+            tv_name.setText(itemData.getTitle());
             groupbuy_btn.setText("预计发售");
             groupbuy_oldprice.getPaint().setFlags(0);
             groupbuy_pe.setVisibility(View.INVISIBLE);
             groupbuy_time.setVisibility(View.GONE);
             groupbuy_count_time.setVisibility(View.VISIBLE);
-            groupbuy_oldprice.setText(itemData.sellcount+"份");
+            groupbuy_oldprice.setText(itemData.getSalecount()+"份");
         }
 
-        long leftTime = itemData.countdowntime-(System.currentTimeMillis());
+        long leftTime = itemData.getCountdowntime()-(System.currentTimeMillis());
         if (leftTime > 0) {
             groupbuy_count_time.start(leftTime);
         } else {
@@ -113,7 +113,7 @@ public class CountDownAdapter extends CommonBaseAdapter<GroupBuy> {
             public void onViewAttachedToWindow(View v) {
                 GroupBuy itemData = mDatas.get(position);
                 CountdownView groupbuy_count_time = holder.getView(R.id.groupbuy_count_time);
-                long leftTime = itemData.countdowntime-(System.currentTimeMillis());
+                long leftTime = itemData.getCountdowntime()-(System.currentTimeMillis());
                 if (leftTime > 0) {
                     groupbuy_count_time.start(leftTime);
                 } else {

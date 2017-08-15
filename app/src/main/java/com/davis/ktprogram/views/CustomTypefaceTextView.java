@@ -7,8 +7,8 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.davis.sdj.R;
-import com.davis.sdj.util.CommonManager;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.util.CommonManager;
 
 
 /**

@@ -12,9 +12,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.davis.sdj.R;
-import com.davis.sdj.adapter.recycleradapter.CommonRecyclerAdapter;
-import com.davis.sdj.util.LogUtils;
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.adapter.recycleradapter.CommonRecyclerAdapter;
+import com.davis.ktprogram.util.LogUtils;
 
 
 public class LoadMoreRecyclerView extends RecyclerView {
@@ -96,7 +96,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
 				super.onScrolled(recyclerView, dx, dy);
 				
 				if (isLastItemVisible()) {
-					LogUtils.i("123", "isLastItemVisible");
+					LogUtils.INSTANCE.i("123", "isLastItemVisible");
 					if (hasMoreData && mCurState != State.LOADING
 							&& mCurState != State.FAILED
 							&& mCurState != State.UNAVAILABLE) {
@@ -157,7 +157,7 @@ public class LoadMoreRecyclerView extends RecyclerView {
 				public void run() {
 					// TODO Auto-generated method stub
 					if (isLastItemVisible()) {
-						LogUtils.i("123", "isLastItemVisible");
+						LogUtils.INSTANCE.i("123", "isLastItemVisible");
 						if (mCurState != State.LOADING
 								&& mCurState != State.FAILED
 								&& mCurState != State.UNAVAILABLE) {

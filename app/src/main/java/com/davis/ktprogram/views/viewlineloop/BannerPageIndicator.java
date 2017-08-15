@@ -15,11 +15,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 
-import com.davis.sdj.R;
-import com.davis.sdj.util.CommonManager;
-import com.davis.sdj.views.loopbanner.LoopPageAdapter;
-import com.davis.sdj.views.viewpagerindicator.PageIndicator;
-import com.davis.sdj.views.viewpagerindicator.scrollbar.ScrollBar;
+
+import com.davis.ktprogram.R;
+import com.davis.ktprogram.util.CommonManager;
+import com.davis.ktprogram.views.loopbanner.LoopPageAdapter;
+import com.davis.ktprogram.views.viewpagerindicator.PageIndicator;
+import com.davis.ktprogram.views.viewpagerindicator.scrollbar.ScrollBar;
 
 import static android.graphics.Paint.ANTI_ALIAS_FLAG;
 import static android.widget.LinearLayout.HORIZONTAL;

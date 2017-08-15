@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Scroller;
 
-import com.davis.sdj.R;
+import com.davis.ktprogram.R;
+
 
 //com.taobao.detailview.TBLayout
 public class TBLayout extends LinearLayout {

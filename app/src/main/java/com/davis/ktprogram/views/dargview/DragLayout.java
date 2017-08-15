@@ -8,7 +8,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 
-import com.davis.sdj.util.CommonManager;
+import com.davis.ktprogram.util.CommonManager;
+
 
 /**
  *
@@ -62,7 +63,7 @@ public class DragLayout extends ScrollView {
             wrapperContent = (DavisWebView) wrapper.getChildAt(1);
             //设置两个子View的高度为手机的高度
             wrapperMenu.getLayoutParams().height = mScreenHeight;
-            wrapperContent.getLayoutParams().height = mScreenHeight-CommonManager.dpToPx(300);
+            wrapperContent.getLayoutParams().height = mScreenHeight- CommonManager.dpToPx(300);
             isSetted = true;
         }
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);

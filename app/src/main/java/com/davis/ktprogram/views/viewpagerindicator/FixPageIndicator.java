@@ -11,7 +11,8 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.davis.sdj.views.viewpagerindicator.scrollbar.ScrollBar;
+
+import com.davis.ktprogram.views.viewpagerindicator.scrollbar.ScrollBar;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 

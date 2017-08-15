@@ -8,7 +8,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.davis.sdj.views.viewpagerindicator.PageIndicator;
+
+import com.davis.ktprogram.views.viewpagerindicator.PageIndicator;
 
 import java.lang.reflect.Field;
 

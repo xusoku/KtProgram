@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.davis.ktprogram.R;
 import com.davis.ktprogram.adapter.base.CommonBaseAdapter;
+import com.davis.ktprogram.adapter.base.ViewHolder;
 
 import java.util.ArrayList;
 
@@ -71,7 +72,7 @@ public class CustomListDialog {
         }
        dialog_list.setAdapter(new CommonBaseAdapter<String>(context,list,R.layout.layout_item_dialog) {
            @Override
-           public void convert(RecyclerView.ViewHolder holder, String itemData, int position) {
+           public void convert(ViewHolder holder, String itemData, int position) {
                holder.setText(R.id.dialog_list_item,itemData);
            }
        });
