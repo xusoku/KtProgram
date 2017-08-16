@@ -17,7 +17,7 @@
         android:background="@color/colormain"
         >
 
-        <com.davis.sdj.views.CustomTypefaceTextView
+        <com.davis.ktprogram.views.CustomTypefaceTextView
             android:id="@+id/tvTopBarTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +63,7 @@
             android:scaleType="fitCenter"
             android:visibility="gone"/>
 
-        <com.davis.sdj.views.CustomTypefaceTextView
+        <com.davis.ktprogram.views.CustomTypefaceTextView
             android:id="@+id/btnRightTitle"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
