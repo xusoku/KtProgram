@@ -6,6 +6,7 @@ import android.text.TextUtils
 import com.davis.ktprogram.model.*
 import com.davis.ktprogram.util.SharePreferenceUtils
 import java.util.ArrayList
+import kotlin.properties.Delegates
 
 /**
  * Created by xushengfu on 2017/8/10.
@@ -16,11 +17,9 @@ class AppApplication : Application() {
 
     companion object {
 
-        private var instance: AppApplication? = null
+        private var instance: AppApplication by Delegates.notNull()
 
-        fun getApplication(): AppApplication? {
-            return instance
-        }
+        fun getApplication()=instance!!
 
         val apptype = "android"
         var shopid = ""
@@ -112,7 +111,7 @@ class AppApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        instance = getApplicationContext() as AppApplication?
+        instance = this
 
         token = SharePreferenceUtils.sharedPreferences.getString("token", "")
 
