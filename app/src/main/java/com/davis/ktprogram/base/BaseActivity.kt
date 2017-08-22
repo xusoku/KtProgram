@@ -17,6 +17,7 @@ import com.davis.ktprogram.util.AppManager
 import com.davis.ktprogram.util.LogUtils
 import com.davis.ktprogram.views.CustomTypefaceTextView
 import com.davis.ktprogram.views.ProgressWheel
+import kotlinx.android.synthetic.main.activity_base.*
 
 abstract class BaseActivity : PermissionActivity() {
 
@@ -24,7 +25,6 @@ abstract class BaseActivity : PermissionActivity() {
     var mActivity: Activity?  = null
     var mInflater: LayoutInflater?  = null
 
-    private var layTopBar: RelativeLayout? = null
     private var tvTitle: TextView? = null
     private var btnLeft: ImageView? = null
     private var btnRight: ImageButton? = null
@@ -59,16 +59,7 @@ abstract class BaseActivity : PermissionActivity() {
         mActivity = this
         mInflater = layoutInflater
         // topbar相关
-        layTopBar = findViewById(R.id.layTopBar) as RelativeLayout
         tvTitle = findViewById(R.id.tvTopBarTitle) as TextView
-        btnLeft = findViewById(R.id.btnLeft) as ImageView
-        btnRight = findViewById(R.id.btnRight) as ImageButton
-        btnRight1 = findViewById(R.id.btnRight1) as ImageButton
-        btnRightTitle = findViewById(R.id.btnRightTitle) as TextView
-
-        // 内容区
-        layBody = findViewById(R.id.layBody) as FrameLayout
-        stubLoadingFailed = findViewById(R.id.stubLoadingFailed) as ViewStub
 
         hideTopBar()
 
